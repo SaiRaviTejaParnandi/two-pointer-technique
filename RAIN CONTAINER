@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int maxArea(vector<int>& a){
+        int n=a.size();
+        int l=0;
+        int r=n-1;
+        int area=0;
+        while( l<r)
+        {
+         int lh=a[l];
+         int rh=a[r];
+         int w=r-l;
+         int t= min( lh,rh);
+       area=max(area,t*w);
+         if(lh>rh)
+         {
+             r--;
+         }
+         else
+         {
+             l++;
+         }
+            
+        }
+        return area;
+     
+    }
+};
